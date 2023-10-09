@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title th:text="${titulo}"></title>
+
+	<style>
+		table {
+			border-collapse: collapse;
+			margin: 0 auto;
+		}
+		td,
+		th {
+			border: 1px solid burlywood;
+			padding: 8px;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+<h1 th:text="${tituloH1}"></h1>
+<table>
+	<thead>
+	<tr>
+		<td>Id</td>
+		<td>nombre</td>
+		<td>descripcion</td>
+		<td>tipo</td>
+		<td>numeroCreditos</td>
+		<td>numeroAlumnosMatriculados</td>
+	</tr>
+	</thead>
+	<tbody>
+		<tr th:each ="asignatura : ${listaAsignaturas}">
+			<td th:text="${asignatura.id}"></td>
+			<td th:text="${asignatura.nombre}"></td>
+			<td th:text="${asignatura.descripcion}"></td>
+			<td th:text="${asignatura.tipo}"></td>
+			<td th:text="${asignatura.numeroCreditos}"></td>
+			<td th:text="${asignatura.numeroAlumnosMatriculados}"></td>
+		</tr>
+	</tbody>
+</table>
+</body>
+</html>
