@@ -78,7 +78,16 @@ public class Asignatura {
 		return listaAsignaturas;
 	}
 	
-	
+	public static List<Asignatura> asignaturasPorTipo(String tipo) {
+		List<Asignatura> listaAsignaturas = new ArrayList<>();
+		
+		for (Asignatura a: Asignatura.dameListaAsignaturas()) {
+			if (tipo.equalsIgnoreCase(a.getTipo())) {
+				listaAsignaturas.add(a);
+			}
+		}
+		return listaAsignaturas;
+	}
 	
 
 }

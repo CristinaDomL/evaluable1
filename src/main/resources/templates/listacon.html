@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
 <title th:text="${titulo}"></title>
@@ -19,7 +19,11 @@
 </head>
 <body>
 <h1 th:text="${tituloH1}"></h1>
-<table>
+<p th:if="${listaAsignaturas.size() == 0}">No hay alumnos para mostrar</p>
+<a th:href="@{/home}">Home</a>
+<a th:href="@{/asignatura/listado/sin}"> Listado sin número de alumnos</a>
+
+<table th:if="${listaAsignaturas.size() !=0">
 	<thead>
 	<tr>
 		<td>Id</td>
@@ -30,6 +34,7 @@
 		<td>numeroAlumnosMatriculados</td>
 	</tr>
 	</thead>
+	
 	<tbody>
 		<tr th:each ="asignatura : ${listaAsignaturas}">
 			<td th:text="${asignatura.id}"></td>
@@ -38,6 +43,9 @@
 			<td th:text="${asignatura.tipo}"></td>
 			<td th:text="${asignatura.numeroCreditos}"></td>
 			<td th:text="${asignatura.numeroAlumnosMatriculados}"></td>
+			<td>
+				<a th:href="@{'/asignatura/listado?nombre=' + ${asigatura.nombre}"></a>
+			</td>
 		</tr>
 	</tbody>
 </table>

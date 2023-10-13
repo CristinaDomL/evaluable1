@@ -5,15 +5,17 @@
 <title th:text="${titulo}"></title>
 </head>
 <body>
-<h1 th:text="${H1}"></h1>
+<h1 th:text="${header}"></h1>
 <p th:text="${parrafo1}"></p>
 <p th:text="${parrafo2}"></p>
 <p th:text="${parrafo3}"></p>
 <img th:src="@{/images/colegio.png}">
 </br>
-<a th:text="@{conAlumnos}">Listado con número de alumnos</a>
+<a th:href="@{/asignatura/listado}"> Listado completo alumnos</a>
 </br>
-<a th:text="@{sinAlumnos}">Listado sin número de alumnos</a>
+<a th:href="@{/asignatura/listado/con}">Listado con número de alumnos</a>
+</br>
+<a th:href="@{/asignatura/listado/sin}">Listado sin número de alumnos</a>
 
 </body>
 </html>
